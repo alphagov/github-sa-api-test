@@ -1,0 +1,39 @@
+query {
+  organization(login:"alphagov") {
+    repositories(first:100) {
+      nodes {
+        name
+        vulnerabilityAlerts(first:10) {
+          edges {
+            node {
+              id
+              packageName
+              vulnerableManifestPath
+              vulnerableRequirements
+              securityAdvisory {
+                id
+                summary
+                vulnerabilities(first:10) {
+                  edges {
+                    node {
+                      package {
+                        name
+                      }
+                      advisory {
+                        description
+                      }
+                      severity
+                      firstPatchedVersion{
+                        identifier
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

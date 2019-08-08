@@ -1,0 +1,730 @@
+[
+    {
+        "name": "slimmer",
+        "vulnerabilityAlerts": {
+            "edges": [
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQzMDM1MzYzNQ==",
+                        "packageName": "yard",
+                        "vulnerableManifestPath": "slimmer.gemspec",
+                        "vulnerableRequirements": "= 0.8.7.6",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLWdqNHAtM3doMy0ycm1m",
+                            "summary": "High severity vulnerability that affects yard",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "yard"
+                                            },
+                                            "advisory": {
+                                                "description": "lib/yard/core_ext/file.rb in the server in YARD before 0.9.11 does not block relative paths with an initial ../ sequence, which allows attackers to conduct directory traversal attacks and read arbitrary files."
+                                            },
+                                            "severity": "HIGH",
+                                            "firstPatchedVersion": {
+                                                "identifier": "0.9.11"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQxMTAxOTQ3MzE=",
+                        "packageName": "yard",
+                        "vulnerableManifestPath": "slimmer.gemspec",
+                        "vulnerableRequirements": "= 0.8.7.6",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLXhmaGgtcng1Ni1yeGNy",
+                            "summary": "Moderate severity vulnerability that affects yard",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "yard"
+                                            },
+                                            "advisory": {
+                                                "description": "## Possible arbitrary path traversal and file access via `yard server`\r\n\r\n### Impact\r\n\r\nA path traversal vulnerability was discovered in YARD <= 0.9.19 when using `yard server` to serve documentation. This bug would allow unsanitized HTTP requests to access arbitrary files on the machine of a yard server host under certain conditions.\r\n\r\nThanks to CuongMX from Viettel Cyber Security for discovering this vulnerability.\r\n\r\n### Patches\r\n\r\nPlease upgrade to YARD v0.9.20 immediately if you are relying on yard server to host documentation in any untrusted environments.\r\n\r\n### Workarounds\r\n\r\nFor users who cannot upgrade, it is possible to perform path sanitization of HTTP requests at your webserver level. WEBrick, for example, can perform such sanitization by default (which you can use via `yard server -s webrick`), as can certain rules in your webserver configuration.\r\n\r\n"
+                                            },
+                                            "severity": "MODERATE",
+                                            "firstPatchedVersion": {
+                                                "identifier": "0.9.20"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "name": "publisher",
+        "vulnerabilityAlerts": {
+            "edges": [
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQ5MzQ2MjI2NQ==",
+                        "packageName": "omniauth",
+                        "vulnerableManifestPath": "Gemfile.lock",
+                        "vulnerableRequirements": "= 1.9.0",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLXd3NHgtcndxNi1xcGdm",
+                            "summary": "High severity vulnerability that affects omniauth",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "omniauth"
+                                            },
+                                            "advisory": {
+                                                "description": "The request phase of the OmniAuth Ruby gem is vulnerable to Cross-Site Request Forgery when used as part of the Ruby on Rails framework, allowing accounts to be connected without user intent, user interaction, or feedback to the user. This permits a secondary account to be able to sign into the web application as the primary account.\r\n\r\nIn order to mitigate this vulnerability, Rails users should consider using the [`omniauth-rails_csrf_protection`](https://github.com/cookpad/omniauth-rails_csrf_protection) gem. More info is available in this [PR](https://github.com/omniauth/omniauth/pull/809#issuecomment-502079405)."
+                                            },
+                                            "severity": "HIGH",
+                                            "firstPatchedVersion": null
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "name": "gds-sso",
+        "vulnerabilityAlerts": {
+            "edges": [
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQ5MzU2NzkyNw==",
+                        "packageName": "omniauth",
+                        "vulnerableManifestPath": "Gemfile.lock",
+                        "vulnerableRequirements": "= 1.9.0",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLXd3NHgtcndxNi1xcGdm",
+                            "summary": "High severity vulnerability that affects omniauth",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "omniauth"
+                                            },
+                                            "advisory": {
+                                                "description": "The request phase of the OmniAuth Ruby gem is vulnerable to Cross-Site Request Forgery when used as part of the Ruby on Rails framework, allowing accounts to be connected without user intent, user interaction, or feedback to the user. This permits a secondary account to be able to sign into the web application as the primary account.\r\n\r\nIn order to mitigate this vulnerability, Rails users should consider using the [`omniauth-rails_csrf_protection`](https://github.com/cookpad/omniauth-rails_csrf_protection) gem. More info is available in this [PR](https://github.com/omniauth/omniauth/pull/809#issuecomment-502079405)."
+                                            },
+                                            "severity": "HIGH",
+                                            "firstPatchedVersion": null
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "name": "imminence",
+        "vulnerabilityAlerts": {
+            "edges": [
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQ5MzQyODE3OQ==",
+                        "packageName": "omniauth",
+                        "vulnerableManifestPath": "Gemfile.lock",
+                        "vulnerableRequirements": "= 1.9.0",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLXd3NHgtcndxNi1xcGdm",
+                            "summary": "High severity vulnerability that affects omniauth",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "omniauth"
+                                            },
+                                            "advisory": {
+                                                "description": "The request phase of the OmniAuth Ruby gem is vulnerable to Cross-Site Request Forgery when used as part of the Ruby on Rails framework, allowing accounts to be connected without user intent, user interaction, or feedback to the user. This permits a secondary account to be able to sign into the web application as the primary account.\r\n\r\nIn order to mitigate this vulnerability, Rails users should consider using the [`omniauth-rails_csrf_protection`](https://github.com/cookpad/omniauth-rails_csrf_protection) gem. More info is available in this [PR](https://github.com/omniauth/omniauth/pull/809#issuecomment-502079405)."
+                                            },
+                                            "severity": "HIGH",
+                                            "firstPatchedVersion": null
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "name": "whitehall",
+        "vulnerabilityAlerts": {
+            "edges": [
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQ5MzM4NzcyOQ==",
+                        "packageName": "omniauth",
+                        "vulnerableManifestPath": "Gemfile.lock",
+                        "vulnerableRequirements": "= 1.9.0",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLXd3NHgtcndxNi1xcGdm",
+                            "summary": "High severity vulnerability that affects omniauth",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "omniauth"
+                                            },
+                                            "advisory": {
+                                                "description": "The request phase of the OmniAuth Ruby gem is vulnerable to Cross-Site Request Forgery when used as part of the Ruby on Rails framework, allowing accounts to be connected without user intent, user interaction, or feedback to the user. This permits a secondary account to be able to sign into the web application as the primary account.\r\n\r\nIn order to mitigate this vulnerability, Rails users should consider using the [`omniauth-rails_csrf_protection`](https://github.com/cookpad/omniauth-rails_csrf_protection) gem. More info is available in this [PR](https://github.com/omniauth/omniauth/pull/809#issuecomment-502079405)."
+                                            },
+                                            "severity": "HIGH",
+                                            "firstPatchedVersion": null
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "name": "marples",
+        "vulnerabilityAlerts": {
+            "edges": [
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQxMTU1NTc2NQ==",
+                        "packageName": "activerecord",
+                        "vulnerableManifestPath": "marples.gemspec",
+                        "vulnerableRequirements": "~> 3.1.0",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLXhycjYtM3BjNC1tNDQ3",
+                            "summary": "Moderate severity vulnerability that affects activerecord",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "activerecord"
+                                            },
+                                            "advisory": {
+                                                "description": "activerecord/lib/active_record/nested_attributes.rb in Active Record in Ruby on Rails 3.1.x and 3.2.x before 3.2.22.1, 4.0.x and 4.1.x before 4.1.14.1, 4.2.x before 4.2.5.1, and 5.x before 5.0.0.beta1.1 does not properly implement a certain destroy option, which allows remote attackers to bypass intended change restrictions by leveraging use of the nested attributes feature."
+                                            },
+                                            "severity": "MODERATE",
+                                            "firstPatchedVersion": {
+                                                "identifier": "3.2.22.1"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "activerecord"
+                                            },
+                                            "advisory": {
+                                                "description": "activerecord/lib/active_record/nested_attributes.rb in Active Record in Ruby on Rails 3.1.x and 3.2.x before 3.2.22.1, 4.0.x and 4.1.x before 4.1.14.1, 4.2.x before 4.2.5.1, and 5.x before 5.0.0.beta1.1 does not properly implement a certain destroy option, which allows remote attackers to bypass intended change restrictions by leveraging use of the nested attributes feature."
+                                            },
+                                            "severity": "MODERATE",
+                                            "firstPatchedVersion": {
+                                                "identifier": "4.1.14.1"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQxNjQwNzU1OQ==",
+                        "packageName": "activerecord",
+                        "vulnerableManifestPath": "marples.gemspec",
+                        "vulnerableRequirements": "~> 3.1.0",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLW1od3AtcWhwYy1oM2pt",
+                            "summary": "High severity vulnerability that affects activerecord",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "activerecord"
+                                            },
+                                            "advisory": {
+                                                "description": "SQL injection vulnerability in activerecord/lib/active_record/connection_adapters/postgresql_adapter.rb in the PostgreSQL adapter for Active Record in Ruby on Rails 2.x and 3.x before 3.2.19 allows remote attackers to execute arbitrary SQL commands by leveraging improper bitstring quoting."
+                                            },
+                                            "severity": "HIGH",
+                                            "firstPatchedVersion": {
+                                                "identifier": "3.2.19"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "name": "omniauth-gds",
+        "vulnerabilityAlerts": {
+            "edges": [
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQ5MzU3MzE1OQ==",
+                        "packageName": "omniauth",
+                        "vulnerableManifestPath": "Gemfile.lock",
+                        "vulnerableRequirements": "= 1.9.0",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLXd3NHgtcndxNi1xcGdm",
+                            "summary": "High severity vulnerability that affects omniauth",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "omniauth"
+                                            },
+                                            "advisory": {
+                                                "description": "The request phase of the OmniAuth Ruby gem is vulnerable to Cross-Site Request Forgery when used as part of the Ruby on Rails framework, allowing accounts to be connected without user intent, user interaction, or feedback to the user. This permits a secondary account to be able to sign into the web application as the primary account.\r\n\r\nIn order to mitigate this vulnerability, Rails users should consider using the [`omniauth-rails_csrf_protection`](https://github.com/cookpad/omniauth-rails_csrf_protection) gem. More info is available in this [PR](https://github.com/omniauth/omniauth/pull/809#issuecomment-502079405)."
+                                            },
+                                            "severity": "HIGH",
+                                            "firstPatchedVersion": null
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "name": "govuk_frontend_toolkit",
+        "vulnerabilityAlerts": {
+            "edges": [
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQ1NTczMjgwNQ==",
+                        "packageName": "ffi",
+                        "vulnerableManifestPath": "Gemfile.lock",
+                        "vulnerableRequirements": "= 1.9.18",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLTJndzItOHE5dy1jdzhw",
+                            "summary": "Moderate severity vulnerability that affects ffi",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "ffi"
+                                            },
+                                            "advisory": {
+                                                "description": "ruby-ffi version 1.9.23 and earlier has a DLL loading issue which can be hijacked on Windows OS, when a Symbol is used as DLL name instead of a String This vulnerability appears to have been fixed in v1.9.24 and later."
+                                            },
+                                            "severity": "MODERATE",
+                                            "firstPatchedVersion": {
+                                                "identifier": "1.9.24"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQ1NjA0OTU2OA==",
+                        "packageName": "jquery",
+                        "vulnerableManifestPath": "package-lock.json",
+                        "vulnerableRequirements": "= 1.12.4",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLXJteGctNzNnZy00cDk4",
+                            "summary": "Moderate severity vulnerability that affects jquery",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "jquery"
+                                            },
+                                            "advisory": {
+                                                "description": "jQuery before 3.0.0 is vulnerable to Cross-site Scripting (XSS) attacks when a cross-domain Ajax request is performed without the dataType option, causing text/javascript responses to be executed."
+                                            },
+                                            "severity": "MODERATE",
+                                            "firstPatchedVersion": {
+                                                "identifier": "3.0.0"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQ1NjA0OTU2OQ==",
+                        "packageName": "lodash",
+                        "vulnerableManifestPath": "package-lock.json",
+                        "vulnerableRequirements": "= 0.9.2",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLWZ2cXItMjd3ci04MmZt",
+                            "summary": "Moderate severity vulnerability that affects lodash",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "lodash"
+                                            },
+                                            "advisory": {
+                                                "description": "lodash node module before 4.17.5 suffers from a Modification of Assumed-Immutable Data (MAID) vulnerability via defaultsDeep, merge, and mergeWith functions, which allows a malicious user to modify the prototype of \"Object\" via __proto__, causing the addition or modification of an existing property that will exist on all objects."
+                                            },
+                                            "severity": "MODERATE",
+                                            "firstPatchedVersion": {
+                                                "identifier": "4.17.5"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQ3NDE1ODI5OQ==",
+                        "packageName": "minimatch",
+                        "vulnerableManifestPath": "package-lock.json",
+                        "vulnerableRequirements": "= 0.2.14",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLWh4bTItcjM0Zi1xbWM1",
+                            "summary": "High severity vulnerability that affects minimatch",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "minimatch"
+                                            },
+                                            "advisory": {
+                                                "description": "Minimatch is a minimal matching utility that works by converting glob expressions into JavaScript `RegExp` objects. The primary function, `minimatch(path, pattern)` in Minimatch 3.0.1 and earlier is vulnerable to ReDoS in the `pattern` parameter."
+                                            },
+                                            "severity": "HIGH",
+                                            "firstPatchedVersion": {
+                                                "identifier": "3.0.2"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQ4ODk0MzQzNQ==",
+                        "packageName": "lodash",
+                        "vulnerableManifestPath": "package-lock.json",
+                        "vulnerableRequirements": "= 0.9.2",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLTR4YzkteGhyai12NTc0",
+                            "summary": "Low severity vulnerability that affects lodash",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "lodash"
+                                            },
+                                            "advisory": {
+                                                "description": "A prototype pollution vulnerability was found in lodash <4.17.11 where the functions merge, mergeWith, and defaultsDeep can be tricked into adding or modifying properties of Object.prototype."
+                                            },
+                                            "severity": "LOW",
+                                            "firstPatchedVersion": {
+                                                "identifier": "4.17.11"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQ4ODk0MzQzNg==",
+                        "packageName": "jquery",
+                        "vulnerableManifestPath": "package-lock.json",
+                        "vulnerableRequirements": "= 1.12.4",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLTZjM2otYzY0bS1xaGdx",
+                            "summary": "Moderate severity vulnerability that affects jquery",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "jquery"
+                                            },
+                                            "advisory": {
+                                                "description": "jQuery before 3.4.0, as used in Drupal, Backdrop CMS, and other products, mishandles jQuery.extend(true, {}, ...) because of Object.prototype pollution. If an unsanitized source object contained an enumerable __proto__ property, it could extend the native Object.prototype."
+                                            },
+                                            "severity": "MODERATE",
+                                            "firstPatchedVersion": {
+                                                "identifier": "3.4.0"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQ5ODY5NTQyNg==",
+                        "packageName": "js-yaml",
+                        "vulnerableManifestPath": "package-lock.json",
+                        "vulnerableRequirements": "= 2.0.5",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLThqOGMtN2pmaC1oNmh4",
+                            "summary": "High severity vulnerability that affects js-yaml",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "js-yaml"
+                                            },
+                                            "advisory": {
+                                                "description": "Js-yaml prior to 3.13.1 are vulnerable to Code Injection. The load() function may execute arbitrary code injected through a malicious YAML file."
+                                            },
+                                            "severity": "HIGH",
+                                            "firstPatchedVersion": {
+                                                "identifier": "3.13.1"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQxMDA0OTUzMjA=",
+                        "packageName": "js-yaml",
+                        "vulnerableManifestPath": "package-lock.json",
+                        "vulnerableRequirements": "= 2.0.5",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLTJwcjYtNzZ2Zi03NTQ2",
+                            "summary": "Moderate severity vulnerability that affects js-yaml",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "js-yaml"
+                                            },
+                                            "advisory": {
+                                                "description": "Versions js-yaml prior to 3.13.0 are vulnerable to Denial of Service. By parsing a carefully-crafted YAML file, the node process stalls and may exhaust system resources leading to a Denial of Service."
+                                            },
+                                            "severity": "MODERATE",
+                                            "firstPatchedVersion": {
+                                                "identifier": "3.13.0"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQxMDUwMTAwMDM=",
+                        "packageName": "underscore.string",
+                        "vulnerableManifestPath": "package-lock.json",
+                        "vulnerableRequirements": "= 2.2.1",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLXYycDYtNG1wNy0zcjl2",
+                            "summary": "Moderate severity vulnerability that affects underscore.string",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "underscore.string"
+                                            },
+                                            "advisory": {
+                                                "description": "Underscore.string, before 3.3.5, is vulnerable to Regular Expression Denial of Service (ReDoS)."
+                                            },
+                                            "severity": "MODERATE",
+                                            "firstPatchedVersion": {
+                                                "identifier": "3.3.5"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQxMDYwODc2NTE=",
+                        "packageName": "eslint",
+                        "vulnerableManifestPath": "package-lock.json",
+                        "vulnerableRequirements": "= 3.10.2",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLWpjZ3EteGgyZi0yaGZt",
+                            "summary": "Moderate severity vulnerability that affects eslint",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "eslint"
+                                            },
+                                            "advisory": {
+                                                "description": "A vulnerability was descovered in eslint before 4.18.2. One of the regexes in eslint is vulnerable to catastrophic backtracking."
+                                            },
+                                            "severity": "MODERATE",
+                                            "firstPatchedVersion": {
+                                                "identifier": "4.18.2"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "name": "support",
+        "vulnerabilityAlerts": {
+            "edges": [
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQ5MzM4ODE4Mg==",
+                        "packageName": "omniauth",
+                        "vulnerableManifestPath": "Gemfile.lock",
+                        "vulnerableRequirements": "= 1.9.0",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLXd3NHgtcndxNi1xcGdm",
+                            "summary": "High severity vulnerability that affects omniauth",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "omniauth"
+                                            },
+                                            "advisory": {
+                                                "description": "The request phase of the OmniAuth Ruby gem is vulnerable to Cross-Site Request Forgery when used as part of the Ruby on Rails framework, allowing accounts to be connected without user intent, user interaction, or feedback to the user. This permits a secondary account to be able to sign into the web application as the primary account.\r\n\r\nIn order to mitigate this vulnerability, Rails users should consider using the [`omniauth-rails_csrf_protection`](https://github.com/cookpad/omniauth-rails_csrf_protection) gem. More info is available in this [PR](https://github.com/omniauth/omniauth/pull/809#issuecomment-502079405)."
+                                            },
+                                            "severity": "HIGH",
+                                            "firstPatchedVersion": null
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "name": "fabric-scripts",
+        "vulnerabilityAlerts": {
+            "edges": [
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQ1OTcxNDI5Mg==",
+                        "packageName": "pycrypto",
+                        "vulnerableManifestPath": "requirements.txt",
+                        "vulnerableRequirements": "= 2.6",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLTY1Mjgtd3ZmNi1mNnFn",
+                            "summary": "Moderate severity vulnerability that affects pycrypto",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "pycrypto"
+                                            },
+                                            "advisory": {
+                                                "description": "lib/Crypto/PublicKey/ElGamal.py in PyCrypto through 2.6.1 generates weak ElGamal key parameters, which allows attackers to obtain sensitive information by reading ciphertext data (i.e., it does not have semantic security in face of a ciphertext-only attack). The Decisional Diffie-Hellman (DDH) assumption does not hold for PyCrypto's ElGamal implementation."
+                                            },
+                                            "severity": "MODERATE",
+                                            "firstPatchedVersion": null
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "node": {
+                        "id": "MDI4OlJlcG9zaXRvcnlWdWxuZXJhYmlsaXR5QWxlcnQ3MDcyNDQ0Mw==",
+                        "packageName": "pycrypto",
+                        "vulnerableManifestPath": "requirements.txt",
+                        "vulnerableRequirements": "= 2.6",
+                        "securityAdvisory": {
+                            "id": "MDE2OlNlY3VyaXR5QWR2aXNvcnlHSFNBLWNxMjctdjd4cC1jMzU2",
+                            "summary": "Moderate severity vulnerability that affects pycrypto",
+                            "vulnerabilities": {
+                                "edges": [
+                                    {
+                                        "node": {
+                                            "package": {
+                                                "name": "pycrypto"
+                                            },
+                                            "advisory": {
+                                                "description": "Heap-based buffer overflow in the ALGnew function in block_templace.c in Python Cryptography Toolkit (aka pycrypto) allows remote attackers to execute arbitrary code as demonstrated by a crafted iv parameter to cryptmsg.py."
+                                            },
+                                            "severity": "MODERATE",
+                                            "firstPatchedVersion": null
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+]
