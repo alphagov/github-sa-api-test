@@ -3,11 +3,19 @@ query {
     repositories(first:100) {
       nodes {
         name
+        isArchived
+        isDisabled
+        isPrivate
+        licenseInfo {
+          name
+        }
         vulnerabilityAlerts(first:10) {
           edges {
             node {
               id
               packageName
+              dismissedAt
+              dismissReason
               vulnerableManifestPath
               vulnerableRequirements
               securityAdvisory {
@@ -24,12 +32,14 @@ query {
                       }
                       severity
                       firstPatchedVersion{
+
                         identifier
                       }
                     }
                   }
                 }
               }
+
             }
           }
         }
