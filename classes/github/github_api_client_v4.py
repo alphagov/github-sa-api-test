@@ -90,3 +90,13 @@ class GithubApiClientV4(GithubApiClient):
             print(f"Cursor: {cursor}")
 
         return repository_list
+
+    def get_active_vulnerable():
+        results = v4client.post(query_data) # change to populate dynamically
+        vulnerable_nodes = [
+             node
+             for node
+             in results.organization.repositories.nodes
+             if node.vulnerabilityAlerts.edges]
+
+        print(json.dumps(vulnerable_nodes, indent=4))

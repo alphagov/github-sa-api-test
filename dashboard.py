@@ -88,3 +88,11 @@ repository_names = [
     in repositories]
 
 print(repository_names)
+
+active_count = len(repositories_by_status["ACTIVE"])
+private_count = len(repositories_by_status["PRIVATE"])
+disabled_count = len(repositories_by_status["DISABLED"])
+archived_count = len(repositories_by_status["ARCHIVED"])
+
+print(f'ACTIVE: {active_count}\nPRIVATE: {private_count}\n'
+        f'DISABLED: {disabled_count}\nARCHIVED: {archived_count}')
