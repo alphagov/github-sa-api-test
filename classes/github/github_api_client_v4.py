@@ -1,3 +1,4 @@
+import requests
 from addict import Dict
 from gql import gql, Client
 from gql.transport.requests import RequestsHTTPTransport
@@ -28,3 +29,10 @@ class GithubApiClientV4(GithubApiClient):
         from pprint import pprint
         results = Dict(self.client.execute(query))
         return results
+
+    def get(self):
+        headers = self.get_headers()
+        url = self.root_url
+
+        response = requests.get(url, headers=headers)
+        return response.text

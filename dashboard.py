@@ -57,4 +57,24 @@ print(response_alerts.status_code)
 
 
 
+from sgqlc.operation import Operation
+from github_schema import github_schema as schema
+
+op = Operation(schema.Query)  # note 'schema.'
+
+# -- code below follows as the original usage example:
+
+# select a field, here with selection arguments, then another field:
+issues = op.repository(owner=org, name=repo).issues(first=100)
+# select sub-fields explicitly: { nodes { number title } }
+issues.nodes.number()
+issues.nodes.title()
+# here uses __fields__() to select by name (*args)
+issues.page_info.__fields__('has_next_page')
+# here uses __fields__() to select by name (**kwargs)
+issues.page_info.__fields__(end_cursor=True)
+
+# you can print the resulting GraphQL
+print(op)
+
 
