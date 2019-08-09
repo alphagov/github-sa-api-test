@@ -28,53 +28,63 @@ with open('query.graphql') as query_file:
 # query = gql(query_data)
 # from pprint import pprint
 # results = Dict(client.execute(query))
+
+
+
 v4client = GithubApiClientV4()
-results = v4client.post(query_data)
-
-vulnerable_nodes = [
-    node
-    for node
-    in results.organization.repositories.nodes
-    if node.vulnerabilityAlerts.edges]
-
-print(json.dumps(vulnerable_nodes, indent=4))
-
-
+# results = v4client.post(query_data)
+#
+# vulnerable_nodes = [
+#     node
+#     for node
+#     in results.organization.repositories.nodes
+#     if node.vulnerabilityAlerts.edges]
+#
+# print(json.dumps(vulnerable_nodes, indent=4))
+#
+#
 v3client = GithubApiClientV3()
 org = "alphagov"
-repo = "csw-backend"
+# repo = "csw-backend"
+#
+# repo_info = f"/repos/{org}/{repo}"
+# alert_status = f"/repos/{org}/{repo}/vulnerability-alerts"
+#
+# response = v3client.get(repo_info)
+# print(response.json())
+#
+# response_alerts = v3client.get(alert_status)
+# print(response_alerts.status_code)
 
-repo_info = f"/repos/{org}/{repo}"
-alert_status = f"/repos/{org}/{repo}/vulnerability-alerts"
+print ("Test get repos query")
+repositories = v4client.get_full_repository_list(org)
+print(len(repositories))
 
-response = v3client.get(repo_info)
-print(response.json())
+repositories_by_status = {
+    "ACTIVE": [],
+    "PRIVATE": [],
+    "ARCHIVED": [],
+    "DISABLED": []
+}
 
-response_alerts = v3client.get(alert_status)
-print(response_alerts.status_code)
+def get_status(org, repo):
+    status = None
+    if repo.isArchived:
+        status = "ARCHIVED"
+    elif repo.isDisabled:
+        status = "DISABLED"
+    elif repo.isPrivate:
+        status = "PRIVATE"
+    else:
+        status = "ACTIVE"
 
+    repositories_by_status[status].append(repo)
 
+    return f"{repo.name}: {status}"
 
+repository_names = [
+    get_status(org, repo)
+    for repo
+    in repositories]
 
-
-from sgqlc.operation import Operation
-from github_schema import github_schema as schema
-
-op = Operation(schema.Query)  # note 'schema.'
-
-# -- code below follows as the original usage example:
-
-# select a field, here with selection arguments, then another field:
-issues = op.repository(owner=org, name=repo).issues(first=100)
-# select sub-fields explicitly: { nodes { number title } }
-issues.nodes.number()
-issues.nodes.title()
-# here uses __fields__() to select by name (*args)
-issues.page_info.__fields__('has_next_page')
-# here uses __fields__() to select by name (**kwargs)
-issues.page_info.__fields__(end_cursor=True)
-
-# you can print the resulting GraphQL
-print(op)
-
-
+print(repository_names)
