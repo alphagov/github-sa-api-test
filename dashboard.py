@@ -96,3 +96,5 @@ archived_count = len(repositories_by_status["ARCHIVED"])
 
 print(f'ACTIVE: {active_count}\nPRIVATE: {private_count}\n'
         f'DISABLED: {disabled_count}\nARCHIVED: {archived_count}')
+
+v4client.get_active_vulnerable(org)

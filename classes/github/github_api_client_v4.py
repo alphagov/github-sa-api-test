@@ -91,7 +91,65 @@ class GithubApiClientV4(GithubApiClient):
 
         return repository_list
 
-    def get_active_vulnerable():
+    def get_active_vulnerable(self, org):
+        # query {
+        #   organization(login: "alphagov") {
+        #     repositories(first: 100) {
+        #       nodes {
+        #         name
+        #         vulnerabilityAlerts(first:100) {
+        #           edges {
+        #               node {
+        #                   id
+        #                   packageName
+        #                   vulnerableManifestPath
+        #                   vulnerableRequirements
+        #                   dismissReason
+        #                   dismissedAt
+        #                   securityAdvisory {
+        #                       id
+        #                       summary
+        #                       vulnerabilities(first:10) {
+        #                       edges {
+        #                           node {
+        #                           package {
+        #                               name
+        #                           }
+        #                           advisory {
+        #                               description
+        #                           }
+        #                           severity
+        #                           firstPatchedVersion{
+        #                               identifier
+        #                           }
+        #                        }
+        #                   }
+        #                   pageInfo {
+        #                   hasNextPage
+        #                   endCursor
+        #                   }
+        #                  }
+        #                 }
+        # }
+        cursor = None
+        last = False
+        repository_list = []
+        while not last:
+            op = Operation(schema.Query)  # note 'schema.'
+
+            if cursor:
+                repositories = op.organization(login=org).repositories(first=100, after=cursor)
+            else:
+                repositories = op.organization(login=org).repositories(first=100)
+
+            repositories.nodes.name()
+            repositories.nodes.vulnerability_alerts.edges.node.__fields__('id')
+            print(op)
+            last = True
+            exit
+
+
+            '''
         results = v4client.post(query_data) # change to populate dynamically
         vulnerable_nodes = [
              node
@@ -99,4 +157,4 @@ class GithubApiClientV4(GithubApiClient):
              in results.organization.repositories.nodes
              if node.vulnerabilityAlerts.edges]
 
-        print(json.dumps(vulnerable_nodes, indent=4))
+        print(json.dumps(vulnerable_nodes, indent=4))'''
