@@ -79,15 +79,15 @@ class GithubApiClientV4(GithubApiClient):
             repositories.page_info.__fields__('has_next_page')
             repositories.page_info.__fields__(end_cursor=True)
             query = op.__to_graphql__()
-            print(query)
+            # print(query)
             page_results = self.post(query)
-            print(type(page_results))
+            # print(type(page_results))
             # print(json.dumps(page_results))
             page = page_results.organization.repositories.nodes
             repository_list.extend(page)
             last = not page_results.organization.repositories.pageInfo.hasNextPage
             cursor = page_results.organization.repositories.pageInfo.endCursor
-            print(f"Cursor: {cursor}")
+            # print(f"Cursor: {cursor}")
 
         return repository_list
 
@@ -142,19 +142,47 @@ class GithubApiClientV4(GithubApiClient):
             else:
                 repositories = op.organization(login=org).repositories(first=100)
 
+
             repositories.nodes.name()
-            repositories.nodes.vulnerability_alerts.edges.node.__fields__('id')
-            print(op)
-            last = True
-            exit
+            alerts = repositories.nodes.vulnerability_alerts(first=10)
+            alerts.edges.node.__fields__(
+                'id',
+                'package_name',
+                'vulnerable_manifest_path',
+                'vulnerable_requirements',
+                'dismiss_reason',
+                'dismissed_at',
+            )
+
+            alerts.edges.node.security_advisory.__fields__(
+                'id',
+                'summary'
+            )
+
+            vulns = alerts.edges.node.security_advisory.vulnerabilities(first=10)
+            vulns.edges.node.package.__fields__('name')
+            vulns.edges.node.advisory.__fields__('description')
+            vulns.edges.node.__fields__('severity')
+            vulns.edges.node.first_patched_version.__fields__('identifier')
+
+            repositories.page_info.__fields__('has_next_page')
+            repositories.page_info.__fields__(end_cursor=True)
+            query = op.__to_graphql__()
+            # print(query)
+            page_results = self.post(query)
+            # print(type(page_results))
+            # print(json.dumps(page_results))
+            page = page_results.organization.repositories.nodes
+            repository_list.extend(page)
+            last = not page_results.organization.repositories.pageInfo.hasNextPage
+            cursor = page_results.organization.repositories.pageInfo.endCursor
+            # print(f"Cursor: {cursor}")
 
 
-            '''
-        results = v4client.post(query_data) # change to populate dynamically
         vulnerable_nodes = [
              node
              for node
-             in results.organization.repositories.nodes
+             in repository_list
              if node.vulnerabilityAlerts.edges]
 
-        print(json.dumps(vulnerable_nodes, indent=4))'''
+        return vulnerable_nodes
