@@ -1,2 +1,4 @@
 dashboard:
   build: .
+  volumes:
+    - .:/usr/src/app
